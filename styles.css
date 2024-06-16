@@ -1,0 +1,436 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff; /* Mengubah warna teks default menjadi putih */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #111; /* Warna latar belakang gelap */
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222; /* Warna latar belakang header yang lebih gelap */
+    padding: 1rem;
+}
+
+.logo img {
+    height: 40px;
+}
+.logo img {
+    transition: transform 0.3s ease;
+}
+.logo img:hover, .logo img:active {
+    transform: scale(1.1);
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ddd;
+}
+
+/* Hero section styling */
+.hero {
+  position: relative;
+  background: url('hero-background1.jpg') no-repeat center center/cover;
+  text-align: center;
+  padding: 5rem 1rem;
+  overflow: hidden;
+  opacity: 0.9;
+  /* Menambahkan transparansi */
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2); /* Overlay putih dengan opacity 0.2 */
+    z-index: 1; /* Menempatkan di atas gambar latar belakang */
+}
+
+.hero-content {
+    position: relative; /* Pastikan konten hero tetap di atas overlay */
+    z-index: 2; /* Atur z-index agar konten hero tetap di atas overlay */
+    color: #fff; /* Warna teks putih */
+    animation: fadeInUp 1s ease-out; /* Animasi fadeInUp */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #ff6347;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0px;
+    transition: background 0.3s;
+}
+
+.hero .btn:hover {
+    background: #e5533d;
+}
+.hero {
+  position: relative;
+  background: url('hero-background1.jpg') no-repeat center center/cover;
+  text-align: center;
+  padding: 5rem 1rem;
+  overflow: hidden;
+  /* Menetapkan tinggi untuk efek paralaks */
+  height: 100vh;
+  /* Menetapkan latar belakang tetap saat scroll */
+  background-attachment: fixed;
+  
+}
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll; /* Mengatur latar belakang agar scroll di perangkat mobile */
+    }
+}
+
+/* Animasi */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Section styling */
+section {
+    padding: 2rem 1rem;
+}
+
+.dark-theme {
+    background: #222; /* Warna latar belakang untuk bagian dark-theme */
+}
+
+.about-content,
+.menu-items,
+.testimonial,
+.image-grid {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.about-content .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #ff6347;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.about-content .btn:hover {
+    background: #e5533d;
+}
+.btn {
+    transition: transform 0.3s ease;
+}
+.btn:hover, .btn:active {
+    transform: scale(1.1);
+}
+
+
+.about-image {
+    flex: 1;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.about-image img {
+    width: 900%; /* Ini mungkin typo, seharusnya 100% */
+    max-width: 200px;
+    border-radius: 12px;
+}
+
+/* Menu section styling */
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.menu-item {
+    flex: 1 1 300px;
+    margin: 1rem;
+    text-align: center;
+}
+
+.menu-item img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.menu-item h3 {
+    margin-top: 1rem;
+}
+
+.menu-item p {
+    margin-top: 0.5rem;
+}
+.menu-item img {
+    transition: transform 0.3s ease;
+}
+.menu-item img:hover, .menu-item img:active {
+    transform: scale(1.1);
+}
+
+/* Reservations section styling */
+.reservation-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #222; /* Warna latar belakang untuk form reservasi */
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.reservation-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation-form input,
+.reservation-form textarea,
+.reservation-form button {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: #333; /* Warna input dan textarea */
+    color: #fff; /* Warna teks untuk input dan textarea */
+}
+
+.reservation-form button {
+    background: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.reservation-form button:hover {
+    background: #e5533d;
+}
+
+/* Testimonials section styling */
+.testimonial {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.testimonial img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.testimonial p {
+    font-style: italic;
+}
+
+/* Gallery section styling */
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image-item {
+    flex: 1 1 200px;
+    margin: 1rem;
+}
+
+.image-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Contact section styling */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item {
+  margin-bottom: 20px;
+  /* Atur margin antar elemen */
+}
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.info-item {
+    margin: 0.5rem 0;
+}
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem 1rem; /* Tambahkan padding untuk memisahkan konten dari pinggir */
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.info-item {
+    margin: 0.5rem 0;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem; /* Tambahkan margin top untuk memisahkan form dari info kontak */
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 500px;
+    font-size: 1rem;
+    background: #333; /* Warna input dan textarea */
+    color: #fff; /* Warna teks untuk input dan textarea */
+}
+
+.contact-form button {
+    background: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: #e5533d;
+}
+
+
+#sendToWhatsApp {
+    transition: transform 0.3s ease;
+}
+#sendToWhatsApp:hover, #sendToWhatsApp:active {
+    transform: scale(1.1);
+}
+
+/* Footer styling */
+.footer {
+    background: #222; /* Warna latar belakang footer yang lebih gelap */
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo img {
+    height: 40px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0.5rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ddd;
+}
+
+.footer-social a {
+    color: #fff;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #ddd;
+}
+
+.footer-text {
+    margin-top: 1rem;
+}

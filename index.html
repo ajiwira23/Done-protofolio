@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+  <title>wira</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <!-- Font Awesome for icons (assuming you're using it) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Hello I am Wira</h1>
+      <p>Explore a fusion of animation design, 3D art, and cutting-edge web development.</p>
+    </div>
+  </section>
+
+  <section class="about dark-theme">
+    <div class="about-content">
+      <h2>About Me</h2>
+      <p>I am a passionate animation designer and 3D artist dedicated to crafting stunning visual experiences. With expertise in web design and development, I merge modern technology with creativity to create captivating and functional artworks.</p>
+    </div>
+    <div class="about-image">
+      <img src="about-image.jpg" alt="About Me Image">
+    </div>
+  </section>
+    <div class="menu-items">
+      <div class="menu-item">
+        <img src="1.jpg" alt="1">
+        <h3> 3D Art</h3>
+        <p>expert in working on 3D pixel projects with a deep level of difficulty, according to customer wishes with detail and precision using three.js professionally</p>
+      </div>
+      <div class="menu-item">
+        <img src="2.jpg" alt="2">
+        <h3>website developer and creator</h3>
+        <p>expert in creating websites according to customer needs to attract many interested domestic and global markets, by conducting thorough research first regarding the needs and marketing places for the required products</p>
+      </div>
+      <div class="menu-item">
+        <img src="3.jpg" alt="3">
+        <h3>Appreciation from the biggest expedition in Indonesia</h3>
+        <p>has an award certificate from one of the largest expedition service providers in Indonesia which has provided door to door delivery services, to meet your international export delivery needs covering more than 220 countries. It makes it easier for you if you want a website that is integrated with the expedition delivery system provided by JNE itself.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>JL.Mandung 05, Pengasih, DI.Yogyakarta, Indonesia</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone-alt"></i>
+        
+        </div>
+      </div>
+      
+      <form class="contact-form" id="contact-form">
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="button" id="sendToWhatsApp">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+      <p class="footer-text">&copy; 2024 WIRA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('sendToWhatsApp').addEventListener('click', function() {
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
+
+      var whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+      var whatsappUrl = `https://wa.me/6283830463935?text=${whatsappMessage}`;
+
+      window.open(whatsappUrl, '_blank');
+      
+      var heroSection = document.querySelector('.hero');
+      
+      
+      function handleParallax() {
+       
+        var scrollPosition = window.scrollY;
+      
+        var parallaxValue = scrollPosition * 0.5;
+        heroSection.style.backgroundPositionY = -parallaxValue + 'px';
+      }
+      
+      window.addEventListener('scroll', handleParallax);
+    });
+    
+  </script>
+
+</body>
+</html>
