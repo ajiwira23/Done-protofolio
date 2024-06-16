@@ -106,18 +106,7 @@ nav ul li a:hover {
 .hero .btn:hover {
     background: #e5533d;
 }
-.hero {
-  position: relative;
-  background: url('hero-background1.jpg') no-repeat center center/cover;
-  text-align: center;
-  padding: 5rem 1rem;
-  overflow: hidden;
-  /* Menetapkan tinggi untuk efek paralaks */
-  height: 100vh;
-  /* Menetapkan latar belakang tetap saat scroll */
-  background-attachment: fixed;
-  
-}
+
 @media (max-width: 768px) {
     .hero {
         background-attachment: scroll; /* Mengatur latar belakang agar scroll di perangkat mobile */
